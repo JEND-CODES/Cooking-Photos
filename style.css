@@ -1,0 +1,182 @@
+html,
+body {
+    overflow-x: hidden;
+    font-family: 'Quicksand', sans-serif;
+    width: 100%;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    text-decoration: none;
+}
+
+section {
+    align-items: center;  
+}
+
+/*  ******* Header + Navigation ******* */
+
+.navbar {
+    background-color: #182c39;
+    border-color: rgb(51, 17, 0);
+    border-color: rgba(51, 17, 0, 0.2);
+    font-family: ;
+    font-weight: 700;
+    padding: 15px 0;
+    transition: padding .5s;
+}
+
+.navbar .navbar-brand {
+    color: #fff;
+    font-family: 'Leckerli One', cursive;
+    font-weight: 500;
+    text-transform: none;
+    font-size: 34px;
+    padding-left: 15px; 
+    text-shadow: grey 1px 1px 1px;
+}
+
+.navbar .navbar-brand:hover,
+.navbar .navbar-brand:focus {
+    color: #e51f4e;
+    transition: color 1s;
+}
+
+.navbar .navbar-nav {
+    padding-right: 50px;
+}
+
+.navbar .navbar-nav > li > a {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+    color: #fff;
+    margin: auto 5px;
+    text-shadow: #222 0.3em 0.3em 0.3em;
+}
+
+.navbar .navbar-nav > li > a:hover,
+.navbar .navbar-nav > li > a:focus:hover {
+    color: #ffc266;
+    transition: color 1s;
+}
+
+.navbar .navbar-nav > li.active > a:hover,
+.navbar .navbar-nav > li.active > a:focus:hover {
+    background-color: transparent;
+}
+
+.navbar.scrolled {
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+    padding: 5px 0;
+    opacity: 0.9;
+}
+
+/* ***** Footer ***** */
+
+#footer {
+    background-color: #182c39;
+    color: white;
+}
+
+#footer ul {
+    list-style-type: none;
+    padding-left: 0;
+    line-height: 2.2;
+}
+
+#footer h5 {
+    font-size: 16px;
+    color: white;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+#footer a {
+    color: #aaa;
+}
+
+#footer a:hover,
+#footer a:focus {
+    text-decoration: none;
+    color: white;
+}
+
+#footer .social-networks {
+    padding-top: 20px;
+    padding-bottom: 25px;
+}
+
+#footer .footer-items .fa {
+    font-size: 17px;
+    margin-bottom: 5px;
+    background-color: white;
+    color: #182c39;
+    border-radius: 50%;
+    padding-bottom: 25px;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    line-height: 31px;
+    text-decoration: none;
+    transition: color 1s;
+}
+
+#footer .footer-items {
+    margin: auto;
+    padding-left: 50px;
+    font-size: 15px;
+}
+
+#footer .fa-facebook:hover,
+#footer .fa-instagram:hover {
+    border: 1px solid #fff;
+    color: #fff;
+    background-color: #182c39;
+}
+
+
+.footer-copyright {
+    background-color: #10222e;
+}
+
+.footer-copyright p {
+    text-align: center;
+    color: #ccc;
+    font-size: 15px;
+    padding: 10px 0;
+    margin-bottom: 0;
+}
+
+#footer .hr-foot {
+    width: 80%;
+    margin: 10px auto;
+    border: 1px solid #fff;
+}
+
+#footer .to-top {
+    color: #fff;
+    font-size: 30px;
+    position: fixed;
+    right: 12px;
+    bottom: 12px;
+    height: 40px;
+    width: 40px;
+    text-decoration: none;
+    border-radius: 50%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#footer .to-top:hover {
+    background-color: #222;
+    color: #fff;
+    transition: all 1s ease;
+}
