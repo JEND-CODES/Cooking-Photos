@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Cooking">
+    <meta content='width=device-width, initial-scale=1.0' name='viewport' />
+    <title>Cooking Photos</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="spoonFavicon2.png" />
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- Polices -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Leckerli+One" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <style>
+        /* Centrage du logo */
+        .navbar-brand {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            text-align: center;
+            margin: 0 auto;
+
+        }
+
+    </style>
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+    <nav class="navbar fixed-top" style="background:#ff8a65;">
+
+        <a class="navbar-brand" href="http://cooking.planetcode.fr">
+            Cooking <img src="CookingLogo.png" alt="Cooking" title="Cooking" style="width:40px;margin-top:-14px;" /></a>
+        <br /><br />
+
+    </nav>
+
+    <!-- Portfolio -->
+    <section id="portfolio">
+        <br /><br /><br /><br />
+        <div class="container">
+            <div class="row" id="results">
+
+            </div>
+        </div>
+    </section>
+
+    <br />
+        <br />
+    <footer class="-bg-footer" id="footer">
+        <div class="container">
+            <div class="row footer-align">
+                <div class="col-md-4 col-sm-4">
+                    <div class="footer-items">
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <div class="footer-items">
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <div class="footer-items">
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a class="to-top" href="#myPage" title="toTop">
+            &uarr;
+        </a>
+    </footer>
+
+    <div class="footer-copyright">
+        <br />
+        <br />
+        <p>Site de partage de photographies, édité à partir d'un tableau Google Sheets</p>
+        <p>Démo réalisée par <a href="http://portfolio.planetcode.fr" style="color:white;" target="_blank">Jean-Eudes Nouaille-Degorce</a></p>
+        <p>Développeur Full Stack &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.linkedin.com/in/jean-eudes-nouaille-degorce/" target="_blank" style="color: white;"><i class="fab fa-linkedin fa-2x" style="font-size: 24px;"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/JEND-CODES" target="_blank" style="color: white;"><i class="fab fa-github fa-2x" style="font-size: 24px;"></i></a></p>
+        <br />
+        <br />
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+        // Lien vers le tableau Google Sheets : https://docs.google.com/spreadsheets/d/(+ SHEET ID +)/edit?usp=sharing
+        
+        // Données du tableau au format Json :
+        var url = "https://spreadsheets.google.com/feeds/cells/(+ SHEET ID +)/1/public/full?alt=json";
+
+        // Sélection et affichage des datas
+        $.getJSON(url, function(data) {
+
+            var entry = data.feed.entry;
+
+            $(entry).each(function(el) {
+                // Column names are name, age, etc.
+                $('#results').prepend('<div class="col-lg-4 card-container" style="padding:10px;"><div class="card-flip"><div class="card front"><img src="' + this.content.$t + '" class="card-img-top img-fluid" alt="illustration"><div class="card-block"></div></div></div></div>');
+
+            });
+            
+        });
+
+    </script>
+
+</body>
+
+</html>
